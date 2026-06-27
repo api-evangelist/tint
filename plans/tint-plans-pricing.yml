@@ -1,0 +1,63 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Tint
+providerId: tint
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- Insurance
+- Embedded Insurance
+- InsurTech
+- Insurance as a Service
+- Protection
+- Plans
+description: >-
+  Tint does not publish self-service, public pricing for its embedded
+  insurance infrastructure. Pricing is sales-led and structured per
+  program / partnership, reflecting the economics of each embedded
+  insurance offering (underwriting, policy administration, claims, and
+  payments) rather than a flat per-call API fee. There is no public Free /
+  Developer / Enterprise tier list; sandbox access and commercial terms are
+  arranged directly with Tint. The plan below is a placeholder reflecting
+  this sales-led model and is not reconciled against published rate cards.
+notes: >-
+  No public pricing page was found as of the creation date. Engage Tint
+  directly via tint.ai to obtain program-specific commercial terms and
+  sandbox credentials. Update this artifact and set reconciled true only
+  against figures Tint publishes or provides in writing.
+sources:
+- https://www.tint.ai
+- https://www.tint.ai/platform/developers
+- https://docs.tint.ai
+plans:
+- id: tint-embedded-program
+  name: Embedded Insurance Program (Sales-Led)
+  type: enterprise
+  description: >-
+    Custom, per-program commercial arrangement for launching and operating
+    an embedded insurance program on Tint's Hermes platform, covering
+    quoting, binding, policy lifecycle, claims, payments, and webhooks.
+    Pricing negotiated directly with Tint.
+  entries:
+  - label: Program Agreement
+    name: program_agreement
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: API Access (api.tint.ai/v2)
+  - name: Sandbox Environment
+  - name: Policy Administration
+  - name: Claims Management
+  - name: Underwriting / Decision Engine
+  - name: Webhooks
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

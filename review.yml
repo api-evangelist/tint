@@ -1,0 +1,163 @@
+aid: tint
+name: Tint
+review:
+  question: Does Tint (tint.ai) expose a real, documented public REST API for embedded insurance?
+  answer: true
+  date: '2026-06-25'
+  reviewer: API Evangelist
+  availabilityNote: |
+    Tint publishes a real, documented REST API (Tint API v2) at
+    https://docs.tint.ai with a stable base URL https://api.tint.ai/v2 and
+    Bearer-token authentication. However, the API is not self-service: there
+    is no public sign-up, no published pricing, and access (including sandbox
+    credentials) is arranged through Tint as part of a sales-led, per-program
+    engagement. The documentation is openly readable; production use is
+    partner-gated.
+disambiguation:
+  summary: |
+    "Tint" is an overloaded name across software and consumer brands. This
+    catalog entry is specifically about Tint, the embedded protection /
+    insurance-as-a-service infrastructure company at https://www.tint.ai
+    (YC W21, founded 2018 by Matheus Riolfi and Jerome Selles, San Francisco;
+    proprietary platform branded "Hermes"). It is NOT any of the similarly
+    named, unrelated products below.
+  notThisProvider:
+  - name: Tint (Sanity / structured content "Tint")
+    note: Unrelated; social content and UGC display tooling formerly branded Tint.
+  - name: TINT by Filestack / social UGC platform
+    note: A separate user-generated-content marketing product.
+  - name: Tint color / theming libraries and CSS tools
+    note: Generic developer utilities that share the word "tint".
+  - name: Window tint / automotive and consumer tint brands
+    note: Physical products unrelated to software or insurance.
+findings:
+  summary: |
+    Tint (tint.ai) operates Hermes, an AI-native insurance operating system,
+    and exposes the same capabilities to platform partners through the Tint
+    API v2. The API is REST over HTTPS at https://api.tint.ai/v2, authenticated
+    with "Authorization: Bearer ${API_TOKEN}" and "Content-Type: application/json".
+    Sandbox vs production is selected by the token rather than by a separate
+    base URL. Documented surfaces cover insurance products (programs) and
+    plans, rated quotes (with coverages returned inline), the full policy
+    lifecycle and endorsements, claims handling from FNOL through settlement,
+    Decision Engine decisions, Score Module scores, questionnaires, and a rich
+    set of policy and claim webhook events. There is no dedicated
+    customer/policyholder entity endpoint; policyholder and claimant data are
+    passed inline within request bodies, and per-program request/response
+    schemas are governed by Tint's configurable validation schema.
+  transports:
+  - protocol: REST
+    scheme: https
+    baseURL: https://api.tint.ai/v2
+    documented: true
+  - protocol: Webhooks
+    scheme: https
+    documented: true
+    note: Outbound event notifications for policy and claim lifecycle events with retry/delivery assurance.
+  auth:
+    type: Bearer
+    header: 'Authorization: Bearer ${API_TOKEN}'
+    note: Same token determines sandbox vs production routing.
+  endpointsConfirmedRest:
+  - GET  https://api.tint.ai/v2/insurance-products
+  - GET  https://api.tint.ai/v2/insurance-products/{productSlug}/plans
+  - POST https://api.tint.ai/v2/policy
+  - GET  https://api.tint.ai/v2/policy/{id}
+  - PUT  https://api.tint.ai/v2/policy/{id}
+  - POST https://api.tint.ai/v2/policy/{id}/issue
+  - POST https://api.tint.ai/v2/policy/{id}/report-usage
+  - POST https://api.tint.ai/v2/policy/{id}/payment
+  - POST https://api.tint.ai/v2/policy/{id}/cancel
+  - POST https://api.tint.ai/v2/policy/{id}/void
+  - GET  https://api.tint.ai/v2/policy/{policyId}/quotes
+  - GET  https://api.tint.ai/v2/policy/{policyId}/decisions/{decisionType}
+  - GET  https://api.tint.ai/v2/policy/{policyId}/scores
+  - GET  https://api.tint.ai/v2/policy/{policyId}/score/{scoreId}
+  - POST https://api.tint.ai/v2/policy/{policyId}/endorsement
+  - GET  https://api.tint.ai/v2/policy/{policyId}/endorsements
+  - GET  https://api.tint.ai/v2/policy/{policyId}/endorsement/{id}
+  - PUT  https://api.tint.ai/v2/policy/{policyId}/endorsement/{id}
+  - POST https://api.tint.ai/v2/policy/{policyId}/endorsement/{id}/approve
+  - POST https://api.tint.ai/v2/policy/{policyId}/endorsement/{id}/cancel
+  - GET  https://api.tint.ai/v2/policy/{policyId}/endorsement/{id}/quotes
+  - GET  https://api.tint.ai/v2/policy/{policyId}/endorsement/{id}/decisions/{decisionType}
+  - GET  https://api.tint.ai/v2/policy/{policyId}/questionnaire/{slug}
+  - POST https://api.tint.ai/v2/policy/{policyId}/claim
+  - GET  https://api.tint.ai/v2/policy/{policyId}/claims
+  - PUT  https://api.tint.ai/v2/policy/{policyId}/claim/{claimId}
+  - GET  https://api.tint.ai/v2/claims
+  - GET  https://api.tint.ai/v2/claim/{id}
+  - PUT  https://api.tint.ai/v2/claim/{id}
+  - POST https://api.tint.ai/v2/claim/{id}/receive
+  - POST https://api.tint.ai/v2/claim/{id}/incomplete
+  - POST https://api.tint.ai/v2/claim/{id}/review
+  - POST https://api.tint.ai/v2/claim/{id}/approve
+  - POST https://api.tint.ai/v2/claim/{id}/settle
+  - POST https://api.tint.ai/v2/claim/{id}/deny
+  - POST https://api.tint.ai/v2/claim/{id}/withdraw
+  - GET  https://api.tint.ai/v2/claim/{claimId}/notes
+  - POST https://api.tint.ai/v2/claim/{claimId}/note
+  - PUT  https://api.tint.ai/v2/claim/{claimId}/note/{noteId}
+  - POST https://api.tint.ai/v2/claim/{claimId}/payment
+  - GET  https://api.tint.ai/v2/claim/{claimId}/upload-url
+  webhookEvents:
+    policy:
+    - POLICY:CREATED
+    - POLICY:UPDATED
+    - POLICY:ISSUED
+    - POLICY:CANCELLED
+    - POLICY:ENDORSED
+    - POLICY:RENEWED
+    - POLICY:PAYMENT
+    - POLICY:USAGE_REPORTED
+    - POLICY:VOID
+    claim:
+    - CLAIM:CREATED
+    - CLAIM:UPDATED
+    - CLAIM:DOCUMENT_ATTACHED
+    - CLAIM:DOCUMENT_DETACHED
+    - CLAIM:PAYMENT_RECORDED
+    - CLAIM:PAYMENT_SENT
+    - CLAIM:PAYMENT_COMPLETED
+    - CLAIM:PAYMENT_FAILED
+    - CLAIM:APPROVED
+    - CLAIM:SETTLED
+    - CLAIM:DENIED
+    - CLAIM:WITHDRAWN
+    - CLAIM:USER_ASSIGNED
+  notes: |
+    Programs are represented as Insurance Products; there is no separate
+    "programs" endpoint name. Coverages are not a standalone REST resource -
+    they are returned inline within quotes. No customer/policyholder entity
+    endpoint exists. Rate Limits and Error Handling are documented sections
+    of the integration guide, but specific numeric limits were not captured
+    and are left unreconciled.
+sources:
+- url: https://www.tint.ai
+  type: Website
+  note: Company site; embedded insurance / MGA positioning, Hermes platform.
+- url: https://www.tint.ai/platform/developers
+  type: Documentation
+  note: Developer overview - REST API, iFrame components, webhooks, async job tracking, sandbox.
+- url: https://docs.tint.ai
+  type: APIReference
+  note: Tint API v2 reference - base URL https://api.tint.ai/v2, Bearer auth, module and webhook docs.
+- url: https://docs.tint.ai/webhooks/policies/policy-created
+  type: Documentation
+  note: Example webhook event documentation (POLICY:CREATED).
+- url: https://www.ycombinator.com/companies/tint
+  type: Reference
+  note: YC W21 profile confirming company identity and founders.
+actions:
+  apisYmlCreated: true
+  openapiCreated: true
+  openapiPath: openapi/tint-openapi.yml
+  reason: |
+    A real, documented REST API exists, so an OpenAPI 3.0.1 document was
+    authored from the publicly documented endpoint paths, base URL, and
+    Bearer auth scheme. Per-program request/response schemas are governed by
+    Tint's configurable validation schema and are not publicly enumerated, so
+    operation bodies are intentionally left unmodeled rather than fabricated.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

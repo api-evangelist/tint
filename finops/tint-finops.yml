@@ -1,0 +1,114 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Tint
+providerId: tint
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- Insurance
+- Embedded Insurance
+- InsurTech
+- Insurance as a Service
+- Protection
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Tint's embedded insurance infrastructure. Tint's commercial
+  model is sales-led and per-program rather than a published usage-based API
+  price list, so cost is driven by program economics (premiums, policy and
+  claim volumes, payments) negotiated with Tint rather than by API call
+  metering alone. The meters below are an analytical framing of where spend
+  and program volume accrue; they are not reconciled against a published
+  Tint rate card.
+notes: >-
+  No public pricing or billing-export specification was found as of the
+  creation date. Confirm billing model, invoice cadence, and any usage
+  components directly with Tint, then set reconciled true.
+sources:
+- https://www.tint.ai
+- https://www.tint.ai/platform/developers
+- https://docs.tint.ai
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Tint
+serviceCategory: Insurance and Financial Services
+billingModel:
+  pricingCategory: Sales-Led
+  billingFrequency: Negotiated
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+focusColumns:
+  ServiceName: Tint Embedded Insurance Platform
+  ServiceCategory: Insurance and Financial Services
+  ProviderName: Tint
+  PublisherName: Tint
+  InvoiceIssuerName: Tint
+  BillingCurrency: USD
+  ChargeCategory: Usage
+  PricingCategory: Sales-Led
+meters:
+- name: policies_issued
+  description: Policies bound and issued through the program, a primary driver of program economics.
+  unit: policies
+  aggregation: sum
+  dimensions:
+  - account
+  - insurance_product
+- name: premium_volume
+  description: Premium written across issued policies within a program.
+  unit: currency
+  aggregation: sum
+  dimensions:
+  - account
+  - insurance_product
+- name: claims_processed
+  description: Claims handled from first notice of loss through settlement.
+  unit: claims
+  aggregation: sum
+  dimensions:
+  - account
+  - insurance_product
+- name: claim_payments
+  description: Payments disbursed against settled claims.
+  unit: currency
+  aggregation: sum
+  dimensions:
+  - account
+  - insurance_product
+- name: policy_payments
+  description: Premium payments collected against policies.
+  unit: currency
+  aggregation: sum
+  dimensions:
+  - account
+  - insurance_product
+principles:
+- name: Visibility
+  description: >-
+    Track policy, premium, and claim volumes per program; reconcile against
+    Tint invoices and program reporting.
+- name: Allocation
+  description: >-
+    Attribute program economics to the embedding product / line of business
+    via the insurance_product dimension.
+- name: Optimization
+  description: >-
+    Tune underwriting (Decision Engine), plan mix, and claims workflows to
+    improve loss and expense ratios within each program.
+- name: Accountability
+  description: >-
+    Assign program owners; review premium, loss, and payment trends against
+    forecast on a regular cadence.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

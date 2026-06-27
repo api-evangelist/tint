@@ -1,0 +1,1463 @@
+{
+  "item": [
+    {
+      "id": "7a45dbd8-6f0f-4e4a-b928-8eb3d58f6a33",
+      "name": "Programs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3dba9b89-e930-4580-abc5-9a8d83a8535a",
+          "name": "List insurance products (programs)",
+          "request": {
+            "name": "List insurance products (programs)",
+            "url": {
+              "path": [
+                "insurance-products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "7414f09c-1fa8-465e-8f50-a1bd135de19d",
+          "name": "List plans for an insurance product",
+          "request": {
+            "name": "List plans for an insurance product",
+            "url": {
+              "path": [
+                "insurance-products",
+                "{{productSlug}}",
+                "plans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "28f93e4d-364b-4b7c-96c4-eb8d8684533e",
+      "name": "Quotes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "170c5b69-8a10-4786-88a7-ee15d134c2ed",
+          "name": "Get rated plan quotes for a policy",
+          "request": {
+            "name": "Get rated plan quotes for a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "quotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "8de487ed-742a-4542-9730-ac8f9a484dcc",
+          "name": "Get quotes for an endorsement",
+          "request": {
+            "name": "Get quotes for an endorsement",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "endorsement",
+                "{{id}}",
+                "quotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "10e8155e-9bea-4858-b118-58a169a27abc",
+      "name": "Policies",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "97d7cfa9-4e55-433e-b546-a8400a644485",
+          "name": "Create a policy",
+          "request": {
+            "name": "Create a policy",
+            "url": {
+              "path": [
+                "policy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "dc5fb0ca-c6dd-4907-a9d7-2bba7570bd6b",
+          "name": "Retrieve a policy",
+          "request": {
+            "name": "Retrieve a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "62f7610a-2f7d-4e4e-b440-8e1ecde2a645",
+          "name": "Update a policy",
+          "request": {
+            "name": "Update a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "f77ce2bc-3387-439a-949f-e3122d159ac2",
+          "name": "Issue a policy",
+          "request": {
+            "name": "Issue a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{id}}",
+                "issue"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "b086ce1d-d6f2-42a5-8b27-615444eb3e38",
+          "name": "Report usage for a policy",
+          "request": {
+            "name": "Report usage for a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{id}}",
+                "report-usage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "e76e8f23-13a0-4d8f-ab7c-016bfb925d8e",
+          "name": "Record a payment against a policy",
+          "request": {
+            "name": "Record a payment against a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{id}}",
+                "payment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "4d8e2f41-20d1-42e7-8b0c-b0a3037201c4",
+          "name": "Cancel a policy",
+          "request": {
+            "name": "Cancel a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{id}}",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "e6d5d8d2-bb4e-4431-9768-064714b362e4",
+          "name": "Void a policy",
+          "request": {
+            "name": "Void a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{id}}",
+                "void"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "adbbb913-2bba-4fac-9c87-6b31f03d159f",
+          "name": "Create an endorsement",
+          "request": {
+            "name": "Create an endorsement",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "endorsement"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "e5695b33-4c8b-4170-879a-58cbc5c73c7b",
+          "name": "List endorsements",
+          "request": {
+            "name": "List endorsements",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "endorsements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "7cfaea92-520e-494d-99dc-1e05612adc1f",
+          "name": "Retrieve an endorsement",
+          "request": {
+            "name": "Retrieve an endorsement",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "endorsement",
+                "{{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "643d3267-2706-4955-8f0a-b22aa11b036a",
+          "name": "Update an endorsement",
+          "request": {
+            "name": "Update an endorsement",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "endorsement",
+                "{{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "b70d2a01-7913-4ff1-8abb-80240c9b67d9",
+          "name": "Approve an endorsement",
+          "request": {
+            "name": "Approve an endorsement",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "endorsement",
+                "{{id}}",
+                "approve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "84934dd6-cfaa-46e0-8885-7716369d1187",
+          "name": "Cancel an endorsement",
+          "request": {
+            "name": "Cancel an endorsement",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "endorsement",
+                "{{id}}",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "5aac7061-f07c-4345-948b-b7993e0fcc72",
+      "name": "Claims",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ca6a9177-5a3b-45f7-ba18-bf79c54beb16",
+          "name": "Create a claim (FNOL) on a policy",
+          "request": {
+            "name": "Create a claim (FNOL) on a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "claim"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "509ad8a1-301a-4546-bf4c-cc18779fa8fb",
+          "name": "List claims on a policy",
+          "request": {
+            "name": "List claims on a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "claims"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "7a02df9e-1d9a-4b52-a942-9e3450404cca",
+          "name": "Update a claim under a policy",
+          "request": {
+            "name": "Update a claim under a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "claim",
+                "{{claimId}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "bd21569f-87fd-40e5-a26a-89b6f1a61bdf",
+          "name": "List claims",
+          "request": {
+            "name": "List claims",
+            "url": {
+              "path": [
+                "claims"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "6e9f1383-d151-4022-9964-3ebab1346c8f",
+          "name": "Retrieve a claim",
+          "request": {
+            "name": "Retrieve a claim",
+            "url": {
+              "path": [
+                "claim",
+                "{{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "96c02d54-8b02-4215-b1c1-af643e25e47f",
+          "name": "Update a claim",
+          "request": {
+            "name": "Update a claim",
+            "url": {
+              "path": [
+                "claim",
+                "{{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "4ddcbb76-e0f2-4405-adbc-c4669482dcab",
+          "name": "Mark a claim received",
+          "request": {
+            "name": "Mark a claim received",
+            "url": {
+              "path": [
+                "claim",
+                "{{id}}",
+                "receive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "cacccb28-6ff9-4b39-8de4-139a1afc0844",
+          "name": "Mark a claim incomplete",
+          "request": {
+            "name": "Mark a claim incomplete",
+            "url": {
+              "path": [
+                "claim",
+                "{{id}}",
+                "incomplete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "84ace943-8e04-43eb-a9bf-87a49409c298",
+          "name": "Move a claim into review",
+          "request": {
+            "name": "Move a claim into review",
+            "url": {
+              "path": [
+                "claim",
+                "{{id}}",
+                "review"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "79d1decc-8a54-48cf-9394-01a7e1c00890",
+          "name": "Approve a claim",
+          "request": {
+            "name": "Approve a claim",
+            "url": {
+              "path": [
+                "claim",
+                "{{id}}",
+                "approve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "3b44a81a-bb50-496d-96db-cdae5322accb",
+          "name": "Settle a claim",
+          "request": {
+            "name": "Settle a claim",
+            "url": {
+              "path": [
+                "claim",
+                "{{id}}",
+                "settle"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "9ec7164b-d893-4a66-932d-4edbfb6eb0b6",
+          "name": "Deny a claim",
+          "request": {
+            "name": "Deny a claim",
+            "url": {
+              "path": [
+                "claim",
+                "{{id}}",
+                "deny"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "48f8f917-e2a9-4308-90a1-5a869f1b205c",
+          "name": "Withdraw a claim",
+          "request": {
+            "name": "Withdraw a claim",
+            "url": {
+              "path": [
+                "claim",
+                "{{id}}",
+                "withdraw"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "adb134e4-9823-4868-9963-ac4413108eb1",
+          "name": "List claim notes",
+          "request": {
+            "name": "List claim notes",
+            "url": {
+              "path": [
+                "claim",
+                "{{claimId}}",
+                "notes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "d95d2524-b359-4558-8464-3dffcb655b00",
+          "name": "Add a claim note",
+          "request": {
+            "name": "Add a claim note",
+            "url": {
+              "path": [
+                "claim",
+                "{{claimId}}",
+                "note"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "ad268109-6dec-4582-827d-90e36d504d45",
+          "name": "Update a claim note",
+          "request": {
+            "name": "Update a claim note",
+            "url": {
+              "path": [
+                "claim",
+                "{{claimId}}",
+                "note",
+                "{{noteId}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "5f75b3ce-1c23-4ffd-9d2b-c0c4e295145b",
+          "name": "Record a claim payment",
+          "request": {
+            "name": "Record a claim payment",
+            "url": {
+              "path": [
+                "claim",
+                "{{claimId}}",
+                "payment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "c957737a-a19a-4313-94cf-34bd7a1c78e6",
+          "name": "Get a claim document upload URL",
+          "request": {
+            "name": "Get a claim document upload URL",
+            "url": {
+              "path": [
+                "claim",
+                "{{claimId}}",
+                "upload-url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "51de15b5-8d8a-4c81-a172-926b92db545b",
+      "name": "Decisions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a645d128-f649-40c8-9c1f-0fa6d685e515",
+          "name": "Calculate a policy decision",
+          "request": {
+            "name": "Calculate a policy decision",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "decisions",
+                "{{decisionType}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "9bc6b5d7-cc81-43d3-80df-3201e1c434a4",
+          "name": "Compute scores for a policy",
+          "request": {
+            "name": "Compute scores for a policy",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "scores"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "38daeffe-bec2-4162-b671-242e7ec087dc",
+          "name": "Retrieve one calculated score",
+          "request": {
+            "name": "Retrieve one calculated score",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "score",
+                "{{scoreId}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "id": "30204ff4-0c90-443a-8386-7a2c7e17e44f",
+          "name": "Get an endorsement decision",
+          "request": {
+            "name": "Get an endorsement decision",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "endorsement",
+                "{{id}}",
+                "decisions",
+                "{{decisionType}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "7d250c81-1ee5-47ba-93ab-de4765feac05",
+      "name": "Questionnaires",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8c6a83bf-556f-4083-af45-a17fae000e59",
+          "name": "Retrieve a policy questionnaire",
+          "request": {
+            "name": "Retrieve a policy questionnaire",
+            "url": {
+              "path": [
+                "policy",
+                "{{policyId}}",
+                "questionnaire",
+                "{{slug}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "info": {
+    "_postman_id": "1abfae59-9011-4bfc-9137-40d0d0c68938",
+    "name": "Tint API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Tint API v2 - embedded protection / insurance-as-a-service. Bearer-authenticated REST API at https://api.tint.ai/v2. Endpoints modeled from public docs at https://docs.tint.ai.",
+      "type": "text/plain"
+    }
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.tint.ai/v2"
+    },
+    {
+      "key": "bearerToken",
+      "value": ""
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Tint
+providerId: tint
+created: '2026-06-25'
+modified: '2026-06-25'
+reconciled: false
+tags:
+- Insurance
+- Embedded Insurance
+- InsurTech
+- Insurance as a Service
+- Protection
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Tint's API documentation includes a Rate Limits section under its
+  integration guides, indicating the v2 API enforces request rate limits.
+  Specific numeric thresholds (requests per minute/second, burst limits,
+  per-environment quotas) are not reconciled in this artifact and should be
+  confirmed against Tint's documentation and your program's configuration.
+  Long-running operations are handled via async job tracking rather than
+  synchronous blocking, which affects how throughput is consumed.
+notes: >-
+  Verify concrete limits and 429 / Retry-After behavior against the Rate
+  Limits and Error Handling pages at docs.tint.ai during reconciliation.
+sources:
+- https://docs.tint.ai
+- https://www.tint.ai/platform/developers
+responseCodes:
+  throttled: 429
+limits:
+- name: API Request Rate
+  scope: account
+  metric: requests
+  limit: see provider documentation
+  notes: >-
+    Tint documents a Rate Limits section for the v2 API; specific numeric
+    thresholds are not published in this artifact.
+policies:
+- name: Backoff Strategy
+  description: >-
+    Clients should implement exponential backoff with jitter and honor any
+    Retry-After header on throttled (429) responses.
+- name: Async Job Tracking
+  description: >-
+    Long-running operations are tracked asynchronously rather than held open
+    synchronously, reducing pressure on synchronous request limits.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

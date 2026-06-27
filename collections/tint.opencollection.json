@@ -1,0 +1,610 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tint API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Programs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List insurance products (programs)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/insurance-products"
+          },
+          "docs": "List insurance products (programs)"
+        },
+        {
+          "info": {
+            "name": "List plans for an insurance product",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/insurance-products/{{productSlug}}/plans"
+          },
+          "docs": "List plans for an insurance product"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Quotes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get rated plan quotes for a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/quotes"
+          },
+          "docs": "Get rated plan quotes for a policy"
+        },
+        {
+          "info": {
+            "name": "Get quotes for an endorsement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/endorsement/{{id}}/quotes"
+          },
+          "docs": "Get quotes for an endorsement"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a policy"
+        },
+        {
+          "info": {
+            "name": "Retrieve a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{id}}"
+          },
+          "docs": "Retrieve a policy"
+        },
+        {
+          "info": {
+            "name": "Update a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tint.ai/v2/policy/{{id}}",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a policy"
+        },
+        {
+          "info": {
+            "name": "Issue a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/{{id}}/issue",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Issue a policy"
+        },
+        {
+          "info": {
+            "name": "Report usage for a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/{{id}}/report-usage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Report usage for a policy"
+        },
+        {
+          "info": {
+            "name": "Record a payment against a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/{{id}}/payment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Record a payment against a policy"
+        },
+        {
+          "info": {
+            "name": "Cancel a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/{{id}}/cancel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Cancel a policy"
+        },
+        {
+          "info": {
+            "name": "Void a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/{{id}}/void",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Void a policy"
+        },
+        {
+          "info": {
+            "name": "Create an endorsement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/endorsement",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an endorsement"
+        },
+        {
+          "info": {
+            "name": "List endorsements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/endorsements"
+          },
+          "docs": "List endorsements"
+        },
+        {
+          "info": {
+            "name": "Retrieve an endorsement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/endorsement/{{id}}"
+          },
+          "docs": "Retrieve an endorsement"
+        },
+        {
+          "info": {
+            "name": "Update an endorsement",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/endorsement/{{id}}",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an endorsement"
+        },
+        {
+          "info": {
+            "name": "Approve an endorsement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/endorsement/{{id}}/approve",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Approve an endorsement"
+        },
+        {
+          "info": {
+            "name": "Cancel an endorsement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/endorsement/{{id}}/cancel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Cancel an endorsement"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Claims",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a claim (FNOL) on a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/claim",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a claim (FNOL) on a policy"
+        },
+        {
+          "info": {
+            "name": "List claims on a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/claims"
+          },
+          "docs": "List claims on a policy"
+        },
+        {
+          "info": {
+            "name": "Update a claim under a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/claim/{{claimId}}",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a claim under a policy"
+        },
+        {
+          "info": {
+            "name": "List claims",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/claims"
+          },
+          "docs": "List claims"
+        },
+        {
+          "info": {
+            "name": "Retrieve a claim",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/claim/{{id}}"
+          },
+          "docs": "Retrieve a claim"
+        },
+        {
+          "info": {
+            "name": "Update a claim",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tint.ai/v2/claim/{{id}}",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a claim"
+        },
+        {
+          "info": {
+            "name": "Mark a claim received",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/{{id}}/receive",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark a claim received"
+        },
+        {
+          "info": {
+            "name": "Mark a claim incomplete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/{{id}}/incomplete",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Mark a claim incomplete"
+        },
+        {
+          "info": {
+            "name": "Move a claim into review",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/{{id}}/review",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Move a claim into review"
+        },
+        {
+          "info": {
+            "name": "Approve a claim",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/{{id}}/approve",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Approve a claim"
+        },
+        {
+          "info": {
+            "name": "Settle a claim",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/{{id}}/settle",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Settle a claim"
+        },
+        {
+          "info": {
+            "name": "Deny a claim",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/{{id}}/deny",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deny a claim"
+        },
+        {
+          "info": {
+            "name": "Withdraw a claim",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/{{id}}/withdraw",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Withdraw a claim"
+        },
+        {
+          "info": {
+            "name": "List claim notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/claim/{{claimId}}/notes"
+          },
+          "docs": "List claim notes"
+        },
+        {
+          "info": {
+            "name": "Add a claim note",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/{{claimId}}/note",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a claim note"
+        },
+        {
+          "info": {
+            "name": "Update a claim note",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tint.ai/v2/claim/{{claimId}}/note/{{noteId}}",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a claim note"
+        },
+        {
+          "info": {
+            "name": "Record a claim payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/{{claimId}}/payment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Record a claim payment"
+        },
+        {
+          "info": {
+            "name": "Get a claim document upload URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/claim/{{claimId}}/upload-url"
+          },
+          "docs": "Get a claim document upload URL"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Decisions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Calculate a policy decision",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/decisions/{{decisionType}}"
+          },
+          "docs": "Calculate a policy decision"
+        },
+        {
+          "info": {
+            "name": "Compute scores for a policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/scores"
+          },
+          "docs": "Compute scores for a policy"
+        },
+        {
+          "info": {
+            "name": "Retrieve one calculated score",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/score/{{scoreId}}"
+          },
+          "docs": "Retrieve one calculated score"
+        },
+        {
+          "info": {
+            "name": "Get an endorsement decision",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/endorsement/{{id}}/decisions/{{decisionType}}"
+          },
+          "docs": "Get an endorsement decision"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Questionnaires",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a policy questionnaire",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/{{policyId}}/questionnaire/{{slug}}"
+          },
+          "docs": "Retrieve a policy questionnaire"
+        }
+      ]
+    }
+  ]
+}
