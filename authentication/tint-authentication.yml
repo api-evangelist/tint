@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/tint-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: 'API token passed as "Authorization: Bearer ${API_TOKEN}". The token determines
+    whether the request is routed to the sandbox or production environment.'
+  sources:
+  - openapi/tint-openapi.yml

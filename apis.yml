@@ -136,6 +136,10 @@ apis:
     (CREATED, APPROVED, SETTLED, DENIED, payment events, and more) with retry and
     delivery assurance.
 common:
+- type: DomainSecurity
+  url: security/tint-domain-security.yml
+- type: Authentication
+  url: authentication/tint-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/tint-ai
 - type: LinkedIn
