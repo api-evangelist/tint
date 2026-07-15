@@ -136,6 +136,8 @@ apis:
     (CREATED, APPROVED, SETTLED, DENIED, payment events, and more) with retry and
     delivery assurance.
 common:
+- type: AgenticAccess
+  url: agentic-access/tint-agentic-access.yml
 - type: DomainSecurity
   url: security/tint-domain-security.yml
 - type: Authentication
