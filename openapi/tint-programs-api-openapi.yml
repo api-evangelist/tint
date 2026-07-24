@@ -1,0 +1,48 @@
+openapi: 3.0.1
+info:
+  title: Tint Claims Programs API
+  description: Tint API v2 - the embedded protection / insurance-as-a-service infrastructure that powers Tint's Hermes platform. The REST API provides programmatic access to insurance products (programs) and plans, rated quotes, the full policy lifecycle (create, issue, endorse, report usage, cancel, void), claims handling (FNOL through settlement), Decision Engine decisions, Score Module scores, and questionnaires. Every request is authenticated with a Bearer API token; the same token determines whether the request is routed to the sandbox or production environment. Endpoint paths below are modeled from Tint's public documentation at https://docs.tint.ai; request/response schemas are configured per program via Tint's validation schema and are therefore not fully enumerated here.
+  termsOfService: https://www.tint.ai
+  contact:
+    name: Tint
+    url: https://www.tint.ai
+  version: '2'
+servers:
+- url: https://api.tint.ai/v2
+  description: Tint API v2 (sandbox vs production selected by API token)
+security:
+- bearerAuth: []
+tags:
+- name: Programs
+  description: Insurance products (programs) and plans.
+paths:
+  /insurance-products:
+    get:
+      operationId: listInsuranceProducts
+      tags:
+      - Programs
+      summary: List insurance products (programs) configured for the account.
+      responses:
+        '200':
+          description: List of insurance products.
+  /insurance-products/{productSlug}/plans:
+    get:
+      operationId: listPlans
+      tags:
+      - Programs
+      summary: List the plans available within an insurance product.
+      parameters:
+      - name: productSlug
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of plans for the insurance product.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'API token passed as "Authorization: Bearer ${API_TOKEN}". The token determines whether the request is routed to the sandbox or production environment.'

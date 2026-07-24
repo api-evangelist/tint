@@ -1,0 +1,104 @@
+openapi: 3.0.1
+info:
+  title: Tint Claims Decisions API
+  description: Tint API v2 - the embedded protection / insurance-as-a-service infrastructure that powers Tint's Hermes platform. The REST API provides programmatic access to insurance products (programs) and plans, rated quotes, the full policy lifecycle (create, issue, endorse, report usage, cancel, void), claims handling (FNOL through settlement), Decision Engine decisions, Score Module scores, and questionnaires. Every request is authenticated with a Bearer API token; the same token determines whether the request is routed to the sandbox or production environment. Endpoint paths below are modeled from Tint's public documentation at https://docs.tint.ai; request/response schemas are configured per program via Tint's validation schema and are therefore not fully enumerated here.
+  termsOfService: https://www.tint.ai
+  contact:
+    name: Tint
+    url: https://www.tint.ai
+  version: '2'
+servers:
+- url: https://api.tint.ai/v2
+  description: Tint API v2 (sandbox vs production selected by API token)
+security:
+- bearerAuth: []
+tags:
+- name: Decisions
+  description: Decision Engine decisions and Score Module scores.
+paths:
+  /policy/{policyId}/decisions/{decisionType}:
+    get:
+      operationId: getPolicyDecision
+      tags:
+      - Decisions
+      summary: Calculate and retrieve a Decision Engine decision for a policy.
+      parameters:
+      - name: policyId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: decisionType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Calculated decision.
+  /policy/{policyId}/scores:
+    get:
+      operationId: computePolicyScores
+      tags:
+      - Decisions
+      summary: Compute Score Module scores for a policy.
+      parameters:
+      - name: policyId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Computed scores.
+  /policy/{policyId}/score/{scoreId}:
+    get:
+      operationId: getPolicyScore
+      tags:
+      - Decisions
+      summary: Retrieve one calculated score for a policy.
+      parameters:
+      - name: policyId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scoreId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Calculated score.
+  /policy/{policyId}/endorsement/{id}/decisions/{decisionType}:
+    get:
+      operationId: getEndorsementDecision
+      tags:
+      - Decisions
+      summary: Get a decision for an endorsement.
+      parameters:
+      - name: policyId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: decisionType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Endorsement decision.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'API token passed as "Authorization: Bearer ${API_TOKEN}". The token determines whether the request is routed to the sandbox or production environment.'
