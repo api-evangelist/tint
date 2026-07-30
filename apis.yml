@@ -7,7 +7,20 @@ description: Tint is an embedded protection / insurance-as-a-service infrastruct
   insurance programs. The Tint API v2 exposes programmatic quoting, binding, policy
   lifecycle management, endorsements, claims, payments, and webhooks under a single
   Bearer-authenticated REST surface at https://api.tint.ai/v2.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: enterprise
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/tint.png
 tags:
 - Insurance
 - Embedded Insurance
@@ -18,123 +31,90 @@ created: '2026-06-25'
 modified: '2026-06-25'
 specificationVersion: '0.19'
 apis:
-- aid: tint:tint-programs-api
-  name: Tint Programs API
-  tags:
-  - Programs
-  - Insurance Products
-  - Plans
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.tint.ai
-  baseURL: https://api.tint.ai/v2
-  properties:
-  - url: https://docs.tint.ai
-    type: Documentation
-  - url: openapi/tint-openapi.yml
-    type: OpenAPI
-  description: Lists the embedded insurance products (programs) configured for an
-    account and the plans available within each product, the building blocks
-    platforms quote and bind policies against.
-- aid: tint:tint-quotes-api
-  name: Tint Quotes API
-  tags:
-  - Quotes
-  - Rating
-  - Coverages
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.tint.ai
-  baseURL: https://api.tint.ai/v2
-  properties:
-  - url: https://docs.tint.ai
-    type: Documentation
-  - url: openapi/tint-openapi.yml
-    type: OpenAPI
-  description: Retrieves rated plan quotes for a policy via the Rating Engine. Coverage
-    details are returned inline within quotes rather than as a standalone resource.
-- aid: tint:tint-policies-api
-  name: Tint Policies API
-  tags:
-  - Policies
-  - Endorsements
-  - Lifecycle
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.tint.ai
-  baseURL: https://api.tint.ai/v2
-  properties:
-  - url: https://docs.tint.ai
-    type: Documentation
-  - url: openapi/tint-openapi.yml
-    type: OpenAPI
-  description: Full policy lifecycle - create, retrieve, update, issue, report usage,
-    record payment, cancel, and void - plus endorsement workflows for mid-term
-    changes with their own quote and decision sub-resources.
 - aid: tint:tint-claims-api
   name: Tint Claims API
+  description: Claims handling from FNOL through settlement.
+  humanURL: https://docs.tint.ai
+  baseURL: https://api.tint.ai/v2
   tags:
   - Claims
-  - FNOL
-  - Payments
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.tint.ai
-  baseURL: https://api.tint.ai/v2
   properties:
-  - url: https://docs.tint.ai
-    type: Documentation
-  - url: openapi/tint-openapi.yml
-    type: OpenAPI
-  description: End-to-end claims handling from first notice of loss through receive,
-    review, approve, settle, deny, or withdraw, with notes, document upload URLs,
-    and claim payments.
+  - type: OpenAPI
+    url: openapi/tint-claims-api-openapi.yml
+  - type: Documentation
+    url: https://docs.tint.ai
+  - type: Documentation
+    url: https://docs.tint.ai/webhooks
 - aid: tint:tint-decisions-api
   name: Tint Decisions API
-  tags:
-  - Decision Engine
-  - Underwriting
-  - Scores
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  description: Decision Engine decisions and Score Module scores.
   humanURL: https://docs.tint.ai
   baseURL: https://api.tint.ai/v2
+  tags:
+  - Decisions
   properties:
-  - url: https://docs.tint.ai
-    type: Documentation
-  - url: openapi/tint-openapi.yml
-    type: OpenAPI
-  description: Calculates and retrieves Decision Engine decisions and Score Module
-    scores for a policy, enforcing the business rules that drive underwriting and
-    pricing.
+  - type: OpenAPI
+    url: openapi/tint-decisions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.tint.ai
+  - type: Documentation
+    url: https://docs.tint.ai/webhooks
+- aid: tint:tint-policies-api
+  name: Tint Policies API
+  description: Policy lifecycle and endorsements.
+  humanURL: https://docs.tint.ai
+  baseURL: https://api.tint.ai/v2
+  tags:
+  - Policies
+  properties:
+  - type: OpenAPI
+    url: openapi/tint-policies-api-openapi.yml
+  - type: Documentation
+    url: https://docs.tint.ai
+  - type: Documentation
+    url: https://docs.tint.ai/webhooks
+- aid: tint:tint-programs-api
+  name: Tint Programs API
+  description: Insurance products (programs) and plans.
+  humanURL: https://docs.tint.ai
+  baseURL: https://api.tint.ai/v2
+  tags:
+  - Programs
+  properties:
+  - type: OpenAPI
+    url: openapi/tint-programs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.tint.ai
+  - type: Documentation
+    url: https://docs.tint.ai/webhooks
 - aid: tint:tint-questionnaires-api
   name: Tint Questionnaires API
-  tags:
-  - Questionnaires
-  - Data Collection
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  description: Questionnaire definitions attached to policies.
   humanURL: https://docs.tint.ai
   baseURL: https://api.tint.ai/v2
-  properties:
-  - url: https://docs.tint.ai
-    type: Documentation
-  - url: openapi/tint-openapi.yml
-    type: OpenAPI
-  description: Retrieves the questionnaire definition attached to a policy by slug,
-    used to collect the underwriting and rating data a program requires.
-- aid: tint:tint-webhooks-api
-  name: Tint Webhooks API
   tags:
-  - Webhooks
-  - Events
-  - Notifications
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.tint.ai/webhooks
-  baseURL: https://api.tint.ai/v2
+  - Questionnaires
   properties:
-  - url: https://docs.tint.ai/webhooks
-    type: Documentation
-  - url: openapi/tint-openapi.yml
-    type: OpenAPI
-  description: Real-time event notifications for the policy lifecycle (CREATED,
-    ISSUED, CANCELLED, ENDORSED, RENEWED, PAYMENT, USAGE_REPORTED, VOID) and claims
-    (CREATED, APPROVED, SETTLED, DENIED, payment events, and more) with retry and
-    delivery assurance.
+  - type: OpenAPI
+    url: openapi/tint-questionnaires-api-openapi.yml
+  - type: Documentation
+    url: https://docs.tint.ai
+  - type: Documentation
+    url: https://docs.tint.ai/webhooks
+- aid: tint:tint-quotes-api
+  name: Tint Quotes API
+  description: Rated plan quotes for a policy.
+  humanURL: https://docs.tint.ai
+  baseURL: https://api.tint.ai/v2
+  tags:
+  - Quotes
+  properties:
+  - type: OpenAPI
+    url: openapi/tint-quotes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.tint.ai
+  - type: Documentation
+    url: https://docs.tint.ai/webhooks
 common:
 - type: AgenticAccess
   url: agentic-access/tint-agentic-access.yml
