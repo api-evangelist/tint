@@ -1,0 +1,24 @@
+{
+  "provider": "tint",
+  "sources": [
+    "tint-claims-api-openapi.yml",
+    "tint-decisions-api-openapi.yml",
+    "tint-policies-api-openapi.yml",
+    "tint-programs-api-openapi.yml",
+    "tint-questionnaires-api-openapi.yml",
+    "tint-quotes-api-openapi.yml"
+  ],
+  "outputs": [
+    "tint-claims-api-openapi.yml",
+    "tint-decisions-api-openapi.yml",
+    "tint-policies-api-openapi.yml",
+    "tint-programs-api-openapi.yml",
+    "tint-questionnaires-api-openapi.yml",
+    "tint-quotes-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
