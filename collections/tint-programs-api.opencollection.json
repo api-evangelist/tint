@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tint Claims Programs API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Programs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List insurance products (programs) configured for the account.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/insurance-products"
+          },
+          "docs": "List insurance products (programs) configured for the account."
+        },
+        {
+          "info": {
+            "name": "List the plans available within an insurance product.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/insurance-products/:productSlug/plans",
+            "params": [
+              {
+                "name": "productSlug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List the plans available within an insurance product."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

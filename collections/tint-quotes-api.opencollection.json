@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tint Claims Quotes API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Quotes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get rated plan quotes for a policy. Coverages are returned inline.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/:policyId/quotes",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get rated plan quotes for a policy. Coverages are returned inline."
+        },
+        {
+          "info": {
+            "name": "Get quotes for an endorsement.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/:policyId/endorsement/:id/quotes",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get quotes for an endorsement."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

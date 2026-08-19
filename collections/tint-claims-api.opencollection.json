@@ -1,0 +1,351 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tint Claims API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Claims",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a claim (first notice of loss) on a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/:policyId/claim",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a claim (first notice of loss) on a policy."
+        },
+        {
+          "info": {
+            "name": "List claims on a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/:policyId/claims",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List claims on a policy."
+        },
+        {
+          "info": {
+            "name": "Update a claim under a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tint.ai/v2/policy/:policyId/claim/:claimId",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "claimId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a claim under a policy."
+        },
+        {
+          "info": {
+            "name": "List claims across the account.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/claims"
+          },
+          "docs": "List claims across the account."
+        },
+        {
+          "info": {
+            "name": "Retrieve a claim.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/claim/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a claim."
+        },
+        {
+          "info": {
+            "name": "Update a claim.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tint.ai/v2/claim/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a claim."
+        },
+        {
+          "info": {
+            "name": "Mark a claim as received.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/:id/receive",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Mark a claim as received."
+        },
+        {
+          "info": {
+            "name": "Mark a claim as incomplete.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/:id/incomplete",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Mark a claim as incomplete."
+        },
+        {
+          "info": {
+            "name": "Move a claim into review.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/:id/review",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Move a claim into review."
+        },
+        {
+          "info": {
+            "name": "Approve a claim.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/:id/approve",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Approve a claim."
+        },
+        {
+          "info": {
+            "name": "Settle a claim.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/:id/settle",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Settle a claim."
+        },
+        {
+          "info": {
+            "name": "Deny a claim.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/:id/deny",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deny a claim."
+        },
+        {
+          "info": {
+            "name": "Withdraw a claim.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/:id/withdraw",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Withdraw a claim."
+        },
+        {
+          "info": {
+            "name": "List notes on a claim.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/claim/:claimId/notes",
+            "params": [
+              {
+                "name": "claimId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List notes on a claim."
+        },
+        {
+          "info": {
+            "name": "Add a note to a claim.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/:claimId/note",
+            "params": [
+              {
+                "name": "claimId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add a note to a claim."
+        },
+        {
+          "info": {
+            "name": "Update a claim note.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tint.ai/v2/claim/:claimId/note/:noteId",
+            "params": [
+              {
+                "name": "claimId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "noteId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a claim note."
+        },
+        {
+          "info": {
+            "name": "Record a payment against a claim.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/claim/:claimId/payment",
+            "params": [
+              {
+                "name": "claimId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Record a payment against a claim."
+        },
+        {
+          "info": {
+            "name": "Get a pre-signed URL to upload a claim document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/claim/:claimId/upload-url",
+            "params": [
+              {
+                "name": "claimId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a pre-signed URL to upload a claim document."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

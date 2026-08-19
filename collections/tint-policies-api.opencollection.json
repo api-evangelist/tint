@@ -1,0 +1,289 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tint Claims Policies API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy"
+          },
+          "docs": "Create a policy."
+        },
+        {
+          "info": {
+            "name": "Retrieve a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a policy."
+        },
+        {
+          "info": {
+            "name": "Update a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tint.ai/v2/policy/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a policy."
+        },
+        {
+          "info": {
+            "name": "Issue a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/:id/issue",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Issue a policy."
+        },
+        {
+          "info": {
+            "name": "Report usage for a usage-based policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/:id/report-usage",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Report usage for a usage-based policy."
+        },
+        {
+          "info": {
+            "name": "Record a payment against a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/:id/payment",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Record a payment against a policy."
+        },
+        {
+          "info": {
+            "name": "Cancel a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/:id/cancel",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a policy."
+        },
+        {
+          "info": {
+            "name": "Void a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/:id/void",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Void a policy."
+        },
+        {
+          "info": {
+            "name": "Create an endorsement (mid-term change) on a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/:policyId/endorsement",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create an endorsement (mid-term change) on a policy."
+        },
+        {
+          "info": {
+            "name": "List endorsements on a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/:policyId/endorsements",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List endorsements on a policy."
+        },
+        {
+          "info": {
+            "name": "Retrieve an endorsement.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/:policyId/endorsement/:id",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an endorsement."
+        },
+        {
+          "info": {
+            "name": "Update an endorsement.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.tint.ai/v2/policy/:policyId/endorsement/:id",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update an endorsement."
+        },
+        {
+          "info": {
+            "name": "Approve an endorsement.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/:policyId/endorsement/:id/approve",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Approve an endorsement."
+        },
+        {
+          "info": {
+            "name": "Cancel an endorsement.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tint.ai/v2/policy/:policyId/endorsement/:id/cancel",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel an endorsement."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tint Claims Decisions API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Decisions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Calculate and retrieve a Decision Engine decision for a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/:policyId/decisions/:decisionType",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "decisionType",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Calculate and retrieve a Decision Engine decision for a policy."
+        },
+        {
+          "info": {
+            "name": "Compute Score Module scores for a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/:policyId/scores",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Compute Score Module scores for a policy."
+        },
+        {
+          "info": {
+            "name": "Retrieve one calculated score for a policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/:policyId/score/:scoreId",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scoreId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve one calculated score for a policy."
+        },
+        {
+          "info": {
+            "name": "Get a decision for an endorsement.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tint.ai/v2/policy/:policyId/endorsement/:id/decisions/:decisionType",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "decisionType",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a decision for an endorsement."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
