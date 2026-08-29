@@ -134,6 +134,9 @@ apis:
   - type: Documentation
     url: https://docs.tint.ai/webhooks
 common:
+- type: CapabilityMap
+  url: capabilities/tint-capability-edges.yml
+  name: Tint Business Capability Map
 - type: AgenticAccess
   url: agentic-access/tint-agentic-access.yml
 - type: DomainSecurity

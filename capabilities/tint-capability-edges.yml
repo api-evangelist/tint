@@ -1,0 +1,56 @@
+slug: tint
+provider: Tint
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Insurance
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Policies
+  spec_file: tint-policies-api-openapi.yml
+  capability_id: BC-2140
+  capability_id_l1: BC-2140
+  capability_name: Policy Administration Management
+  confidence: 0.93
+  evidence: POST /policy/{id}/issue issuePolicy; POST /policy/{id}/cancel cancelPolicy; POST /policy/{policyId}/endorsement
+    createEndorsement Create an endorsement (mid-term change) on a policy
+  reason: Issuance, endorsement/mid-term adjustment, cancellation and void of insurance policies is plainly
+    Policy Administration Management; covers several L2s so L1 only.
+- tag: Claims
+  spec_file: tint-claims-api-openapi.yml
+  capability_id: BC-2160
+  capability_id_l1: BC-2160
+  capability_name: Insurance Claims Management
+  confidence: 0.92
+  evidence: POST /policy/{policyId}/claim createClaim Create a claim (first notice of loss) on a policy;
+    POST /claim/{id}/settle settleClaim Settle a claim
+  reason: Operations span FNOL creation, review, approve, deny, settle — full insurance claims handling
+    lifecycle, so the L1 Insurance Claims Management is right; spans multiple L2s (FNOL, adjustment, settlement)
+    so no single L2 chosen.
+- tag: Programs
+  spec_file: tint-programs-api-openapi.yml
+  capability_id: BC-2100.10
+  capability_id_l1: BC-2100
+  capability_name: Insurance Product Catalogue Management
+  confidence: 0.85
+  evidence: GET /insurance-products listInsuranceProducts List insurance products (programs) configured
+    for the account; GET /insurance-products/{productSlug}/plans listPlans
+  reason: Read-only catalogue of insurance products and their plans maps to Insurance Product Catalogue
+    Management.
+- tag: Quotes
+  spec_file: tint-quotes-api-openapi.yml
+  capability_id: BC-2110.60
+  capability_id_l1: BC-2110
+  capability_name: Quote & Submission Management
+  confidence: 0.78
+  evidence: GET /policy/{policyId}/quotes getPolicyQuotes Get rated plan quotes for a policy. Coverages
+    are returned inline.
+  reason: Retrieval of rated plan quotes (and endorsement quotes) is quote generation feeding bind, matching
+    Quote & Submission Management; some chance it is better read as rating/pricing configuration.
