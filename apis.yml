@@ -7,6 +7,18 @@ description: Tint is an embedded protection / insurance-as-a-service infrastruct
   insurance programs. The Tint API v2 exposes programmatic quoting, binding, policy
   lifecycle management, endorsements, claims, payments, and webhooks under a single
   Bearer-authenticated REST surface at https://api.tint.ai/v2.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: enterprise
   onboarding: self-serve
