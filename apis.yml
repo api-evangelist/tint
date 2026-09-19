@@ -112,6 +112,8 @@ apis:
   humanURL: https://docs.tint.ai
   baseURL: https://api.tint.ai/v2
   tags:
+  - Questionnaire
+  tags_raw:
   - Questionnaires
   properties:
   - type: OpenAPI
