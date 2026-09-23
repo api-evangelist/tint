@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
   title: Tint Claims API
-  description: Tint API v2 - the embedded protection / insurance-as-a-service infrastructure that powers Tint's Hermes platform. The REST API provides programmatic access to insurance products (programs) and plans, rated quotes, the full policy lifecycle (create, issue, endorse, report usage, cancel, void), claims handling (FNOL through settlement), Decision Engine decisions, Score Module scores, and questionnaires. Every request is authenticated with a Bearer API token; the same token determines whether the request is routed to the sandbox or production environment. Endpoint paths below are modeled from Tint's public documentation at https://docs.tint.ai; request/response schemas are configured per program via Tint's validation schema and are therefore not fully enumerated here.
+  description: Tint API v2 - the embedded protection / insurance-as-a-service infrastructure that powers Tint's Hermes platform.
   termsOfService: https://www.tint.ai
   contact:
     name: Tint
@@ -21,7 +21,7 @@ paths:
       operationId: createClaim
       tags:
       - Claims
-      summary: Create a claim (first notice of loss) on a policy.
+      summary: Create a claim (first notice of loss) on a policy
       parameters:
       - name: policyId
         in: path
@@ -36,7 +36,7 @@ paths:
       operationId: listPolicyClaims
       tags:
       - Claims
-      summary: List claims on a policy.
+      summary: List claims on a policy
       parameters:
       - name: policyId
         in: path
@@ -51,7 +51,7 @@ paths:
       operationId: updatePolicyClaim
       tags:
       - Claims
-      summary: Update a claim under a policy.
+      summary: Update a claim under a policy
       parameters:
       - name: policyId
         in: path
@@ -71,7 +71,7 @@ paths:
       operationId: listClaims
       tags:
       - Claims
-      summary: List claims across the account.
+      summary: List claims across the account
       responses:
         '200':
           description: List of claims.
@@ -80,7 +80,7 @@ paths:
       operationId: getClaim
       tags:
       - Claims
-      summary: Retrieve a claim.
+      summary: Retrieve a claim
       parameters:
       - name: id
         in: path
@@ -94,7 +94,7 @@ paths:
       operationId: updateClaim
       tags:
       - Claims
-      summary: Update a claim.
+      summary: Update a claim
       parameters:
       - name: id
         in: path
@@ -109,7 +109,7 @@ paths:
       operationId: receiveClaim
       tags:
       - Claims
-      summary: Mark a claim as received.
+      summary: Mark a claim as received
       parameters:
       - name: id
         in: path
@@ -124,7 +124,7 @@ paths:
       operationId: markClaimIncomplete
       tags:
       - Claims
-      summary: Mark a claim as incomplete.
+      summary: Mark a claim as incomplete
       parameters:
       - name: id
         in: path
@@ -139,7 +139,7 @@ paths:
       operationId: reviewClaim
       tags:
       - Claims
-      summary: Move a claim into review.
+      summary: Move a claim into review
       parameters:
       - name: id
         in: path
@@ -154,7 +154,7 @@ paths:
       operationId: approveClaim
       tags:
       - Claims
-      summary: Approve a claim.
+      summary: Approve a claim
       parameters:
       - name: id
         in: path
@@ -169,7 +169,7 @@ paths:
       operationId: settleClaim
       tags:
       - Claims
-      summary: Settle a claim.
+      summary: Settle a claim
       parameters:
       - name: id
         in: path
@@ -184,7 +184,7 @@ paths:
       operationId: denyClaim
       tags:
       - Claims
-      summary: Deny a claim.
+      summary: Deny a claim
       parameters:
       - name: id
         in: path
@@ -199,7 +199,7 @@ paths:
       operationId: withdrawClaim
       tags:
       - Claims
-      summary: Withdraw a claim.
+      summary: Withdraw a claim
       parameters:
       - name: id
         in: path
@@ -214,7 +214,7 @@ paths:
       operationId: listClaimNotes
       tags:
       - Claims
-      summary: List notes on a claim.
+      summary: List notes on a claim
       parameters:
       - name: claimId
         in: path
@@ -229,7 +229,7 @@ paths:
       operationId: createClaimNote
       tags:
       - Claims
-      summary: Add a note to a claim.
+      summary: Add a note to a claim
       parameters:
       - name: claimId
         in: path
@@ -244,7 +244,7 @@ paths:
       operationId: updateClaimNote
       tags:
       - Claims
-      summary: Update a claim note.
+      summary: Update a claim note
       parameters:
       - name: claimId
         in: path
@@ -264,7 +264,7 @@ paths:
       operationId: createClaimPayment
       tags:
       - Claims
-      summary: Record a payment against a claim.
+      summary: Record a payment against a claim
       parameters:
       - name: claimId
         in: path
@@ -279,7 +279,7 @@ paths:
       operationId: getClaimUploadUrl
       tags:
       - Claims
-      summary: Get a pre-signed URL to upload a claim document.
+      summary: Get a pre-signed URL to upload a claim document
       parameters:
       - name: claimId
         in: path

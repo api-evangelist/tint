@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Tint Claims Decisions API
-  description: Tint API v2 - the embedded protection / insurance-as-a-service infrastructure that powers Tint's Hermes platform. The REST API provides programmatic access to insurance products (programs) and plans, rated quotes, the full policy lifecycle (create, issue, endorse, report usage, cancel, void), claims handling (FNOL through settlement), Decision Engine decisions, Score Module scores, and questionnaires. Every request is authenticated with a Bearer API token; the same token determines whether the request is routed to the sandbox or production environment. Endpoint paths below are modeled from Tint's public documentation at https://docs.tint.ai; request/response schemas are configured per program via Tint's validation schema and are therefore not fully enumerated here.
+  title: Tint Decisions API
+  description: Tint API v2 - the embedded protection / insurance-as-a-service infrastructure that powers Tint's Hermes platform.
   termsOfService: https://www.tint.ai
   contact:
     name: Tint
@@ -21,7 +21,7 @@ paths:
       operationId: getPolicyDecision
       tags:
       - Decisions
-      summary: Calculate and retrieve a Decision Engine decision for a policy.
+      summary: Calculate and retrieve a Decision Engine decision for a policy
       parameters:
       - name: policyId
         in: path
@@ -41,7 +41,7 @@ paths:
       operationId: computePolicyScores
       tags:
       - Decisions
-      summary: Compute Score Module scores for a policy.
+      summary: Compute Score Module scores for a policy
       parameters:
       - name: policyId
         in: path
@@ -56,7 +56,7 @@ paths:
       operationId: getPolicyScore
       tags:
       - Decisions
-      summary: Retrieve one calculated score for a policy.
+      summary: Retrieve one calculated score for a policy
       parameters:
       - name: policyId
         in: path
@@ -76,7 +76,7 @@ paths:
       operationId: getEndorsementDecision
       tags:
       - Decisions
-      summary: Get a decision for an endorsement.
+      summary: Get a decision for an endorsement
       parameters:
       - name: policyId
         in: path

@@ -1,7 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Tint Claims Policies API
-  description: Tint API v2 - the embedded protection / insurance-as-a-service infrastructure that powers Tint's Hermes platform. The REST API provides programmatic access to insurance products (programs) and plans, rated quotes, the full policy lifecycle (create, issue, endorse, report usage, cancel, void), claims handling (FNOL through settlement), Decision Engine decisions, Score Module scores, and questionnaires. Every request is authenticated with a Bearer API token; the same token determines whether the request is routed to the sandbox or production environment. Endpoint paths below are modeled from Tint's public documentation at https://docs.tint.ai; request/response schemas are configured per program via Tint's validation schema and are therefore not fully enumerated here.
+  title: Tint Policies API
+  description: Tint API v2 - the embedded protection / insurance-as-a-service infrastructure that powers Tint's Hermes platform.
   termsOfService: https://www.tint.ai
   contact:
     name: Tint
@@ -21,7 +21,7 @@ paths:
       operationId: createPolicy
       tags:
       - Policies
-      summary: Create a policy.
+      summary: Create a policy
       responses:
         '201':
           description: Policy created.
@@ -30,7 +30,7 @@ paths:
       operationId: getPolicy
       tags:
       - Policies
-      summary: Retrieve a policy.
+      summary: Retrieve a policy
       parameters:
       - name: id
         in: path
@@ -44,7 +44,7 @@ paths:
       operationId: updatePolicy
       tags:
       - Policies
-      summary: Update a policy.
+      summary: Update a policy
       parameters:
       - name: id
         in: path
@@ -59,7 +59,7 @@ paths:
       operationId: issuePolicy
       tags:
       - Policies
-      summary: Issue a policy.
+      summary: Issue a policy
       parameters:
       - name: id
         in: path
@@ -74,7 +74,7 @@ paths:
       operationId: reportPolicyUsage
       tags:
       - Policies
-      summary: Report usage for a usage-based policy.
+      summary: Report usage for a usage-based policy
       parameters:
       - name: id
         in: path
@@ -89,7 +89,7 @@ paths:
       operationId: recordPolicyPayment
       tags:
       - Policies
-      summary: Record a payment against a policy.
+      summary: Record a payment against a policy
       parameters:
       - name: id
         in: path
@@ -104,7 +104,7 @@ paths:
       operationId: cancelPolicy
       tags:
       - Policies
-      summary: Cancel a policy.
+      summary: Cancel a policy
       parameters:
       - name: id
         in: path
@@ -119,7 +119,7 @@ paths:
       operationId: voidPolicy
       tags:
       - Policies
-      summary: Void a policy.
+      summary: Void a policy
       parameters:
       - name: id
         in: path
@@ -134,7 +134,7 @@ paths:
       operationId: createEndorsement
       tags:
       - Policies
-      summary: Create an endorsement (mid-term change) on a policy.
+      summary: Create an endorsement (mid-term change) on a policy
       parameters:
       - name: policyId
         in: path
@@ -149,7 +149,7 @@ paths:
       operationId: listEndorsements
       tags:
       - Policies
-      summary: List endorsements on a policy.
+      summary: List endorsements on a policy
       parameters:
       - name: policyId
         in: path
@@ -164,7 +164,7 @@ paths:
       operationId: getEndorsement
       tags:
       - Policies
-      summary: Retrieve an endorsement.
+      summary: Retrieve an endorsement
       parameters:
       - name: policyId
         in: path
@@ -183,7 +183,7 @@ paths:
       operationId: updateEndorsement
       tags:
       - Policies
-      summary: Update an endorsement.
+      summary: Update an endorsement
       parameters:
       - name: policyId
         in: path
@@ -203,7 +203,7 @@ paths:
       operationId: approveEndorsement
       tags:
       - Policies
-      summary: Approve an endorsement.
+      summary: Approve an endorsement
       parameters:
       - name: policyId
         in: path
@@ -223,7 +223,7 @@ paths:
       operationId: cancelEndorsement
       tags:
       - Policies
-      summary: Cancel an endorsement.
+      summary: Cancel an endorsement
       parameters:
       - name: policyId
         in: path

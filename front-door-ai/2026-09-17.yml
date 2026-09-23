@@ -1,0 +1,27 @@
+# Front Door AI Index — tint — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: tint
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.tint.ai
+  final_host: www.tint.ai
+  ownership: own
+  owner: tint
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 12
+  host_score: 12
+  density: 7.6
+  words: 1578
+  tiers:
+    agentic: 1
+    core: 11
+    model: 0
+  ambiguous: 6
+  top_terms:
+    AI: 11
+    intelligence: 6
+    embedding: 1

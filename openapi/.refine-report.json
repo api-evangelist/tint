@@ -1,12 +1,7 @@
 {
   "provider": "tint",
   "sources": [
-    "tint-claims-api-openapi.yml",
-    "tint-decisions-api-openapi.yml",
-    "tint-policies-api-openapi.yml",
-    "tint-programs-api-openapi.yml",
-    "tint-questionnaires-api-openapi.yml",
-    "tint-quotes-api-openapi.yml"
+    "_original/tint-openapi.yml"
   ],
   "outputs": [
     "tint-claims-api-openapi.yml",
@@ -19,6 +14,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "tint-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "tint-claims-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tint-decisions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tint-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tint-programs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tint-questionnaires-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tint-quotes-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
