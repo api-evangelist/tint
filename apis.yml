@@ -47,7 +47,7 @@ tags_raw:
 - Insurance as a Service
 - Protection
 created: '2026-06-25'
-modified: '2026-06-25'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: tint:tint-claims-api
@@ -137,6 +137,8 @@ apis:
   - type: Documentation
     url: https://docs.tint.ai/webhooks
 common:
+- url: https://www.tint.ai/blog
+  type: Blog
 - type: CapabilityMap
   url: capabilities/tint-capability-edges.yml
   name: Tint Business Capability Map
